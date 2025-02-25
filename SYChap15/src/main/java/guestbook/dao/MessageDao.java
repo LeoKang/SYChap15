@@ -26,6 +26,8 @@ public class MessageDao {
 	public int insert(Connection conn, Message message) throws SQLException {
 		PreparedStatement pstmt = null;
 
+		System.out.println("message.getGuestName() : " + message.getGuestName());
+		
 		try {
 			pstmt = conn.prepareStatement(
 					"insert into guestbook_message " + "(guest_name, password, message) values (?,?,?)");
