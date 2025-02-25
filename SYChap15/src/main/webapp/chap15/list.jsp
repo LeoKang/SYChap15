@@ -31,15 +31,14 @@ MessageListView viewData = messageListService.getMessageList(pageNumber);
 		<c:if test="${viewData.isEmpty()}">
 		등록된 메시지가 없습니다.
 		</c:if>
-		
 		<c:if test="${!viewData.isEmpty()}">
 			<table border="1">
 				<c:forEach var="message" items="${viewData.messageList}">
 					<tr>
 						<td>
-						메시지 번호 : ${message}<br>
-						손님 이름 : ${message}<br>
-						메시지 : ${message}<br>
+						메시지 번호 : ${message.id}<br>
+						손님 이름 : ${message.guestName}<br>
+						메시지 : ${message.message}<br>
 							<a href="confirmDeletion.jsp?messageId=${message.id}">[삭제하기]</a>
 						</td>
 					</tr>
